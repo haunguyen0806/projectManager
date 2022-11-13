@@ -1,0 +1,146 @@
+﻿@model Project_Manager.Models.Person
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="main-content">
+    <div class="page-header">
+        <h2 class="header-title">THAY ĐỔI THÔNG TIN NGƯỜI DÙNG</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="form-valide" asp-action="Edit" asp-controller="Person" asp-route-id="@Model.PersonId" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="PersonId" />
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="FullName">
+                                            FullName
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="FullName" class="form-control" />
+                                            <span asp-validation-for="FullName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="JobTitle">
+                                            JobTitle
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="JobTitle" class="form-control" />
+                                            <span asp-validation-for="JobTitle" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="MobilePhone">
+                                            MobilePhone
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="MobilePhone" class="form-control" />
+                                            <span asp-validation-for="MobilePhone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="BusinessPhone">
+                                            BusinessPhone
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="BusinessPhone" class="form-control" />
+                                            <span asp-validation-for="BusinessPhone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="HomePhone">
+                                            HomePhone
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="HomePhone" class="form-control" />
+                                            <span asp-validation-for="HomePhone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="Email">
+                                            Email
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="Email" class="form-control" />
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="GroupId">
+                                            GroupId
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select asp-for="GroupId" class="form-control" asp-items="ViewBag.GroupId"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="UserId">
+                                            UserId
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="UserId" class="form-control" />
+                                            <span asp-validation-for="UserId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="Status">
+                                            Status
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="Status" class="form-control" />
+                                            <span asp-validation-for="Status" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="SortBy">
+                                            SortBy
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="SortBy" class="form-control" />
+                                            <span asp-validation-for="SortBy" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="Hrmid">
+                                            SortBy
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="Hrmid" class="form-control" />
+                                            <span asp-validation-for="Hrmid" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" asp-for="PositionLevel">
+                                            PositionLevel
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input asp-for="PositionLevel" class="form-control" />
+                                            <span asp-validation-for="PositionLevel" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-12 text-center">
+                                    <button type="submit" value="Save" class="btn btn-primary">Lưu</button>
+                                    <button asp-action="Index" class="btn btn-danger">Quay lại</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Project_Manager.Models.PersonGroup>
+
+@{
+    
+    Layout = null;
+}
+<div class="main-content">
+    <ul>
+        @foreach (var item in Model.Where(x => x.GroupId == 1))
+        {
+            <li>
+                <a>@item.GroupName</a>
+                <ul class="ml-3">
+                    @foreach (var item2 in Model.Where(x => x.GroupParentId == 1).OrderBy(x => x.Odr))
+                    {
+                        <li>@item2.GroupName</li>
+
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</div>
